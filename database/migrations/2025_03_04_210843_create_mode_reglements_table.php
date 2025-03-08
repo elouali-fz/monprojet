@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('mode_reglements', function (Blueprint $table) {
             $table->id();
+            $table->string('mode_reglement');
             $table->timestamps();
         });
     }
