@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 
-Route::get('/register', [RegisteredUserController::class, 'create'])
+/*Route::get('/register', [RegisteredUserController::class, 'create'])
     ->middleware('guest')
     ->name('register');
 
@@ -21,4 +21,7 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth'])->get('/dashboard', function () {
     return view('dashboard', ['user' => auth()->user()]);
 })->name('dashboard');
-require __DIR__.'/auth.php';
+require __DIR__.'/auth.php';*/
+Route::get('/', function () {
+    return view('layouts.app');
+});
