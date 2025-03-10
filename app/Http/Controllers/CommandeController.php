@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Commande;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CommandeController extends Controller
 {
@@ -12,7 +13,9 @@ class CommandeController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();  
+        $commandes = $user->commandes()->orderBy('created_at','desc')->paginate(10);
+        return view('',compact('commandes'));
     }
 
     /**
