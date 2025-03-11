@@ -23,24 +23,24 @@ class CartController extends Controller
             'attributes' => array(),
             'associatedModel' => $Produit
         ));
-        return redirect()->back()->with('success'->'item has beed added to cart successfully');
+        return redirect()->back()->with('success','item has beed added to cart successfully');
     }
 
     public function update($produitID ,$qte){
         \Cart::update($produitID, array(
             'quantity' => $qte,
         ));
-        return redirect()->back()->with('success'->'item has been updated successfully');
+        return redirect()->back()->with('success','item has been updated successfully');
     }
 
     public function remove($produitID){
         \Cart::remove($produitID);
-        return redirect()->back()->with('success'->'item has been removed successfully');
+        return redirect()->back()->with('success','item has been removed successfully');
     }
 
     public function clear(){
         \Cart::clear();
-        return redirect()->back()->with('success'->'Cart has been cleared successfully');
+        return redirect()->back()->with('success','Cart has been cleared successfully');
     }
 
     public function checkout(){
