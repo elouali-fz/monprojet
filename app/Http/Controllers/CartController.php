@@ -10,7 +10,7 @@ class CartController extends Controller
         $items = \Cart::getContent();
         $subTotal = \Cart::getSubTotal();
         $Total= \Cart::getTotal();
-        return view('',compact('items','subTotal','total'));
+        return view('cart',compact('items','subTotal','total'));
     }
 
     public function add($produitID,$qte){
@@ -47,9 +47,9 @@ class CartController extends Controller
         if(\Cart::isEmpty()){
             return redirect()->back->with('error','cart is empty');
         }
-        # $ModeReglements = ModeReglements::all();
-        # $addresse =
+        $ModesReglement = ModeReglement::all();
+        $addresse = Auth::User->address();
         $total = \Cart::getTotal();
-        return view('',compact('$total'));
+        return view('checkout',compact('total','ModesReglement','addresse'));
     }
 }
