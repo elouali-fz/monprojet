@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProduitController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EtatController;
+use App\Http\Controllers\MarqueController;
 use App\Http\Controllers\ModeReglementController;
 
 /*Route::get('/register', [RegisteredUserController::class, 'create'])
@@ -41,4 +42,5 @@ Route::resource('/familles',FamilleController::class);
 Route::resource('/sous-familles',SousFamilleController::class);
 Route::resource('etats', EtatController::class);
 Route::resource('mode_reglements', ModeReglementController::class);
-Route::get('/marques/{id}', 'MarqueController@show')->name('marques.show');
+Route::get('/marques/{marque}', [MarqueController::class, 'show'])->name('marques.show');
+Route::resource('produits', ProduitController::class);

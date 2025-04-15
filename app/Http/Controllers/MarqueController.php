@@ -38,12 +38,15 @@ class MarqueController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
-{
-    $marque = Marque::findOrFail($id);
-    $produits = $marque->produits; // Supposant que vous avez une relation définie
-    return view('marques.show', compact('marque', 'produits'));
-}
+
+     public function show($id)
+     {
+         $marque = Marque::with('produits')->findOrFail($id);
+         return view('marques.show', [
+             'marque' => $marque,
+             'produits' => $marque->produits
+         ]);
+     }
 
     /**
      * Show the form for editing the specified resource.
@@ -63,15 +66,11 @@ class MarqueController extends Controller
 }
 
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Marque $marque)
     {
         $marque->delete();
         return redirect()->route('marques.index');
     }
 }
-
 
 

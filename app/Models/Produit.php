@@ -21,4 +21,12 @@ class Produit extends Model
         return $this->belongsTo(Unite::class);
     }
 
+
+
+
+
+
+
+
+
 }
