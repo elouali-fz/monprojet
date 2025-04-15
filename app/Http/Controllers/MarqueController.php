@@ -38,10 +38,12 @@ class MarqueController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Marque $marque)
-    {
-        //
-    }
+    public function show($id)
+{
+    $marque = Marque::findOrFail($id);
+    $produits = $marque->produits; // Supposant que vous avez une relation définie
+    return view('marques.show', compact('marque', 'produits'));
+}
 
     /**
      * Show the form for editing the specified resource.
