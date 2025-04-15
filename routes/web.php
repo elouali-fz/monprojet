@@ -4,7 +4,8 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\EtatController;
+use App\Http\Controllers\ModeReglementController;
 
 /*Route::get('/register', [RegisteredUserController::class, 'create'])
     ->middleware('guest')
@@ -32,3 +33,6 @@ Route::get('/layout', function () {
 });
 Route::resource('cart', CartController::class)->except(['destroy']);
 Route::delete('/cart', [CartController::class, 'destroy'])->name('cart.destroy');
+
+Route::resource('etats', EtatController::class);
+Route::resource('mode_reglements', ModeReglementController::class);
