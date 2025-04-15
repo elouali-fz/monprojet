@@ -16,7 +16,7 @@ class FamilleController extends Controller
     public function index()
     {
         $familles = Famille::paginate(10);
-        return view('admin.famille.index', compact('familles'));
+        return view('familles.index', compact('familles'));
     }
 
     /**
@@ -24,7 +24,7 @@ class FamilleController extends Controller
      */
     public function create()
     {
-        return view('admin.famille.create');
+        return view('familles.create');
     }
 
     /**
@@ -41,7 +41,7 @@ class FamilleController extends Controller
             'libelle' => $request->libelle,
             'image' => $imagePath,
         ]);
-        return redirect()->route('famille.index');
+        return redirect()->route('familles.index');
     }
 
     /**
@@ -57,7 +57,7 @@ class FamilleController extends Controller
      */
     public function edit(famille $famille)
     {
-        return view('admin.famille.edit', compact('famille'));
+        return view('familles.edit', compact('famille'));
     }
 
     /**
@@ -76,7 +76,7 @@ class FamilleController extends Controller
     
         $famille->update($request->except('image'));
     
-        return redirect()->route('famille.index');
+        return redirect()->route('familles.index');
     }
 
     /**
@@ -88,6 +88,6 @@ class FamilleController extends Controller
             Storage::disk('public')->delete($famille->image);
         }
         $famille->delete();
-        return redirect()->route('famille.index');
+        return redirect()->route('familles.index');
     }
 }

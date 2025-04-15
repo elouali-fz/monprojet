@@ -16,7 +16,7 @@ class SousFamilleController extends Controller
     public function index()
     {
         $sous_familles = SousFamille::paginate(10);
-        return view('admin.sous_famille.index', compact('sous_familles'));
+        return view('sous-familles.index', compact('sous_familles'));
     }
 
     /**
@@ -24,7 +24,7 @@ class SousFamilleController extends Controller
      */
     public function create()
     {
-        return view('admin.sous_famille.create');
+        return view('sous-familles.create');
     }
 
     /**
@@ -42,7 +42,7 @@ class SousFamilleController extends Controller
             'famille_id' => $request->famille_id,
             'image' => $imagePath,
         ]);
-        return redirect()->route('sous_famille.index');
+        return redirect()->route('sous-familles.index');
     }
 
     /**
@@ -58,7 +58,7 @@ class SousFamilleController extends Controller
      */
     public function edit(sousFamille $sous_famille)
     {
-        return view('admin.sous_famille.edit', compact('sous_famille'));
+        return view('sous-familles.edit', compact('sous_famille'));
     }
 
     /**
@@ -78,7 +78,7 @@ class SousFamilleController extends Controller
         // Update the other fields
         $sous_famille->update($request->except('image'));
     
-        return redirect()->route('sous_famille.index');
+        return redirect()->route('sous-familles.index');
     }
 
     /**
@@ -92,6 +92,6 @@ class SousFamilleController extends Controller
             }
         }
         $famille->delete();
-        return redirect()->route('sous_famille.index');
+        return redirect()->route('sous-familles.index');
     }
 }
