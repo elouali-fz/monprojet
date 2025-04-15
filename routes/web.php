@@ -41,3 +41,4 @@ Route::resource('/familles',FamilleController::class);
 Route::resource('/sous-familles',SousFamilleController::class);
 Route::resource('etats', EtatController::class);
 Route::resource('mode_reglements', ModeReglementController::class);
+Route::get('/marques/{id}', 'MarqueController@show')->name('marques.show');
