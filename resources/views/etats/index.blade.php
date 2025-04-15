@@ -1,5 +1,6 @@
-@include('layouts.header')
+@extends('layouts.app')
 
+@section('content')
 <div class="container mt-4">
     <h2>Liste des états</h2>
     <a href="{{ route('etats.create') }}" class="btn btn-primary mb-3">Ajouter un état</a>
@@ -30,5 +31,6 @@
         </tbody>
     </table>
 </div>
+@endsection
 
-@include('layouts.footer')
+
