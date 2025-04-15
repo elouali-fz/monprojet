@@ -741,6 +741,9 @@
                                 <li class="menu-item ">
                                     <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Etats</a>
                                 </li>
+                                <li class="menu-item ">
+                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>test</a>
+                                </li>
                                 
                             </ul>
                         </div>
