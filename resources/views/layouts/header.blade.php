@@ -708,10 +708,37 @@
                                     </div>
                                 </li> -->
                                 <li class="menu-item ">
-                                    <a href="#" class="menu-name" data-title="Butter & Eggs"><i class="biolife-icon icon-honey"></i>Familles</a>
+                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Familles</a>
                                 </li>
                                 <li class="menu-item ">
-                                    <a href="#" class="menu-name" data-title="Butter & Eggs"><i class="biolife-icon icon-honey"></i>SousFamilles</a>
+                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>SousFamilles</a>
+                                </li>
+                                 <li class="menu-item ">
+                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Produits</a>
+                                </li>
+                                 <li class="menu-item ">
+                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Mode Reglements</a>
+                                </li>
+                                 <li class="menu-item ">
+                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Achats</a>
+                                </li>
+                                 <li class="menu-item ">
+                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Unites</a>
+                                </li>
+                                 <li class="menu-item ">
+                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Marques</a>
+                                </li>
+                                 <li class="menu-item ">
+                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Commandes</a>
+                                </li>
+                                 <li class="menu-item ">
+                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Fournisseurs</a>
+                                </li>
+                                 <li class="menu-item ">
+                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Users</a>
+                                </li>
+                                 <li class="menu-item ">
+                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Etats</a>
                                 </li>
                             </ul>
                         </div>
