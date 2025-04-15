@@ -87,11 +87,11 @@ class SousFamilleController extends Controller
     public function destroy(sousFamille $sous_famille)
     {
         if ($sous_famille->image) {
-            if ($famille->image) {
-                Storage::disk('public')->delete($famille->image);
+            if ($sous_famille->image) {
+                Storage::disk('public')->delete($sous_famille->image);
             }
         }
-        $famille->delete();
+        $sous_famille->delete();
         return redirect()->route('sous-familles.index');
     }
 }

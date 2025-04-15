@@ -2,13 +2,13 @@
 
 @section('content')
     <h2>Modifier la Sous-Famille</h2>
-    <form action="{{ route('sous_familles.update', $sous_famille->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('sous-familles.update', $sous_famille->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="mb-3">
             <label for="famille_id">Famille</label>
             <select name="famille_id" class="form-control" required>
-                @foreach ($familles as $famille)
+                @foreach (\App\Models\Famille::all()  as $famille)
                     <option value="{{ $famille->id }}" {{ $sous_famille->famille_id == $famille->id ? 'selected' : '' }}>
                         {{ $famille->libelle }}
                     </option>
