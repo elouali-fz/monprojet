@@ -104,33 +104,65 @@
                                 <a href="#" class="menu-name" data-title="Products">Products</a>
                                 <ul class="sub-menu">
                                     <li class="menu-item"><a href="#">Omelettes</a></li>
-                                    <li class="menu-item"><a href="#">Breakfast Scrambles</a></li>
-                                    <li class="menu-item menu-item-has-children has-child"><a href="#" class="menu-name" data-title="Eggs & other considerations">Eggs & other considerations</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item"><a href="#">Classic Breakfast</a></li>
-                                            <li class="menu-item"><a href="#">Huevos Rancheros</a></li>
-                                            <li class="menu-item"><a href="#">Everything Egg Sandwich</a></li>
-                                            <li class="menu-item"><a href="#">Egg Sandwich</a></li>
-                                            <li class="menu-item"><a href="#">Vegan Burrito</a></li>
-                                            <li class="menu-item"><a href="#">Biscuits and Gravy</a></li>
-                                            <li class="menu-item"><a href="#">Bacon Avo Egg Sandwich</a></li>
-                                        </ul>
-                                    </li>
+                                    <li class="menu-item menu-item-has-children has-child"><a href="#" class="menu-name" data-title="Eggs & other considerations">Eggs & other considerations</a></li>
                                     <li class="menu-item"><a href="#">Griddle</a></li>
-                                    <li class="menu-item menu-item-has-children has-child"><a href="#" class="menu-name" data-title="Sides & Extras">Sides & Extras</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item"><a href="#">Breakfast Burrito</a></li>
-                                            <li class="menu-item"><a href="#">Crab Cake Benedict</a></li>
-                                            <li class="menu-item"><a href="#">Corned Beef Hash</a></li>
-                                            <li class="menu-item"><a href="#">Steak & Eggs</a></li>
-                                            <li class="menu-item"><a href="#">Oatmeal</a></li>
-                                            <li class="menu-item"><a href="#">Fruit & Yogurt Parfait</a></li>
-                                        </ul>
-                                    </li>
+                                    <li class="menu-item menu-item-has-children has-child"><a href="#" class="menu-name" data-title="Sides & Extras">Sides & Extras</a></li>
                                     <li class="menu-item"><a href="#">Biscuits</a></li>
                                     <li class="menu-item"><a href="#">Seasonal Fruit Plate</a></li>
                                 </ul>
                             </li>
+
+                            <!-- debut pour marques -->
+<li class="menu-item menu-item-has-children has-child">
+    <a href="#" class="menu-name" data-title="Products">Marques</a>
+    <ul class="sub-menu">
+        @foreach($marques as $marque)
+        <li class="menu-item">
+            <a href="{{ route('marques.show', $marque->id) }}">{{ $marque->marque }}</a>
+        </li>
+        @endforeach
+    </ul>
+</li>
+<!-- fin pour marques -->
+                            
+
+
+
+
+
+
+
+
+
+                            <!-- debut pour marques -->
+                            <!-- <li class="menu-item menu-item-has-children has-child">
+                            <a href="#" class="menu-name" data-title="Products">Marques</a>
+                            <ul class="sub-menu">
+
+                            @foreach($marques as $marque)
+                            <li data-value="{{ $marque->id }}" class="menu-item"><a href="#">{{ $marque->marque }}</a></li>
+                            @endforeach
+
+                            </ul>
+                            </li> -->
+                            <!-- fin pour marques -->
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                             <li class="menu-item menu-item-has-children has-megamenu">
                                 <a href="#" class="menu-name" data-title="Demo">Demo</a>
                                 <div class="wrap-megamenu lg-width-800 md-width-750">

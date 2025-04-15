@@ -87,4 +87,5 @@ class ProduitController extends Controller
         $produit->delete();
         return redirect()->route('produits.index');
     }
+
 }

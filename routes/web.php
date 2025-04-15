@@ -25,6 +25,9 @@ Route::middleware(['auth'])->get('/dashboard', function () {
 })->name('dashboard');
 require __DIR__.'/auth.php';*/
 Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('/layout', function () {
     return view('layouts.app');
 });
 Route::resource('cart', CartController::class)->except(['destroy']);
