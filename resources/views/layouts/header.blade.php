@@ -39,7 +39,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-2 col-md-6 col-xs-6">
-                    <a href="index-2.html" class="biolife-logo"><img src="assets/images/organic-3.png" alt="biolife logo" width="135" height="34"></a>
+                    <a href="index-2.html" class="biolife-logo"><img src="{{asset('assets/images/organic-3.png}')}" alt="biolife logo" width="135" height="34"></a>
                 </div>
                 <div class="col-lg-6 col-md-7 hidden-sm hidden-xs">
                     <div class="primary-menu">
@@ -707,11 +707,39 @@
                                         </div>
                                     </div>
                                 </li> -->
+
                                 <li class="menu-item ">
-                                    <a href="#" class="menu-name" data-title="Butter & Eggs"><i class="biolife-icon icon-honey"></i>Familles</a>
+                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Familles</a>
                                 </li>
                                 <li class="menu-item ">
-                                    <a href="#" class="menu-name" data-title="Butter & Eggs"><i class="biolife-icon icon-honey"></i>SousFamilles</a>
+                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>SousFamilles</a>
+                                </li>
+                                 <li class="menu-item ">
+                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Produits</a>
+                                </li>
+                                 <li class="menu-item ">
+                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Mode Reglements</a>
+                                </li>
+                                 <li class="menu-item ">
+                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Achats</a>
+                                </li>
+                                 <li class="menu-item ">
+                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Unites</a>
+                                </li>
+                                 <li class="menu-item ">
+                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Marques</a>
+                                </li>
+                                 <li class="menu-item ">
+                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Commandes</a>
+                                </li>
+                                 <li class="menu-item ">
+                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Fournisseurs</a>
+                                </li>
+                                 <li class="menu-item ">
+                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Users</a>
+                                </li>
+                                 <li class="menu-item ">
+                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Etats</a>
                                 </li>
                             </ul>
                         </div>

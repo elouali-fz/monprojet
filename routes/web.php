@@ -5,6 +5,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\FamilleController;
 use App\Http\Controllers\SousFamilleController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProduitController;
 use Illuminate\Support\Facades\Route;
 
 
