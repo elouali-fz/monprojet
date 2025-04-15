@@ -8,10 +8,29 @@ use Illuminate\Support\Facades\Auth;
 class CartController extends Controller
 {
     public function index(){
-        $items = \Cart::getContent();
+        \Cart::clear();
+        $product = [
+            'id' => 123,
+            'name' => 'Example Product',
+            'price' => 99.99,
+            'quantity' => 2,
+            'attributes' => [
+                'size' => 'XL',
+                'color' => 'blue',
+                'image' => 'product-image.jpg'
+            ],
+            'associatedModel' => 'App\Models\Product'
+        ];
+        \Cart::add($product);
+
+        $cartList = \Cart::getContent();
         $subTotal = \Cart::getSubTotal();
-        $Total= \Cart::getTotal();
-        return view('cart',compact('items','subTotal','total'));
+        $total= \Cart::getTotal();
+        return view('cart.index',compact('cartList','subTotal','total'));
+    }
+
+    public function store(){
+        // 
     }
 
     public function add($produitID,$qte){
@@ -39,11 +58,7 @@ class CartController extends Controller
         return redirect()->back()->with('success','item has been removed successfully');
     }
 
-    public function clear(){
-        \Cart::clear();
-        return redirect()->back()->with('success','Cart has been cleared successfully');
-    }
-
+    
     public function checkout(){
         if(\Cart::isEmpty()){
             return redirect()->back->with('error','cart is empty');
@@ -52,5 +67,11 @@ class CartController extends Controller
         $addresse = Auth::User->address();
         $total = \Cart::getTotal();
         return view('checkout',compact('total','ModesReglement','addresse'));
+    }
+    public function destroy()
+    {
+        \Cart::clear();
+        // Remove the dd() for production - it's only for debugging
+        return redirect()->back()->with('success', 'Cart has been cleared successfully');
     }
 }
