@@ -27,7 +27,7 @@
         <div class="form-group">
             <label for="brand">Marque</label>
             <select name="brand_id" id="brand" class="form-control" required>
-                @foreach($brands as $brand)
+                @foreach(\App\Models\Marque::all() as $brand)
                     <option value="{{ $brand->id }}">{{ $brand->name }}</option>
                 @endforeach
             </select>
@@ -37,7 +37,7 @@
         <div class="form-group">
             <label for="unit">Unité</label>
             <select name="unit_id" id="unit" class="form-control" required>
-                @foreach($units as $unit)
+                @foreach(\App\Models\Unite::all() as $unit)
                     <option value="{{ $unit->id }}">{{ $unit->name }}</option>
                 @endforeach
             </select>
