@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProduitController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -33,3 +34,4 @@ Route::get('/layout', function () {
 Route::resource('cart', CartController::class)->except(['destroy']);
 Route::delete('/cart', [CartController::class, 'destroy'])->name('cart.destroy');
 Route::delete('/cart/{id}', [CartController::class, 'remove'])->name('cart.remove');
+Route::resource('produits', ProduitController::class);
