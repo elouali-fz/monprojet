@@ -31,22 +31,44 @@ class ProduitController extends Controller
         */
     public function store(StoreProduitRequest $request)
     {
-        $data = $request->validated();
+        $request->validate([
+            'codebarre' => 'required|numeric',
+            'designation' => 'required|string',
+            'prix_ht' => 'required|numeric',
+            'tva' => 'required|numeric',
+            'description' => 'nullable|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'sous_famille_id' => 'required|exists:sous_familles,id',
+            'marque_id' => 'required|exists:marques,id',
+            'unite_id' => 'required|exists:unites,id',
+        ]);
 
         if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('images', 'public');
+            $imagePath = $request->file('image')->store('produits', 'public');
+        } else {
+            $imagePath = null;
         }
-        Produit::create($data);
 
-        return redirect()->route('produit.index');
+        Produit::create([
+            'codebarre' => $request->codebarre,
+            'designation' => $request->designation,
+            'prix_ht' => $request->prix_ht,
+            'tva' => $request->tva,
+            'description' => $request->description,
+            'image' => $imagePath,
+            'sous_famille_id' => $request->sous_famille_id,
+            'marque_id' => $request->marque_id,
+            'unite_id' => $request->unite_id,
+        ]);
+
+        return redirect()->route('produits.index')->with('success', 'Produit ajouté avec succès');
     }
-
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show(string $id)
     {
-        // 
+        return view('produits.show', compact('produit'));
     }
 
     /**
@@ -62,6 +84,16 @@ class ProduitController extends Controller
      */
     public function update(StoreProduitRequest $request, Produit $produit)
     {
+        $request->validate([
+            'nom' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'prix' => 'required|numeric',
+            'quantite' => 'required|integer',
+            'famille_id' => 'required|integer',
+            'sous_famille_id' => 'nullable|integer',
+            'marque_id' => 'nullable|integer',
+            'unite_id' => 'required|integer',
+        ]);
         if ($request->hasFile('image')) {
             if ($produit->image) {
                 Storage::disk('public')->delete($produit->image);
@@ -74,6 +106,8 @@ class ProduitController extends Controller
         return redirect()->route('produit.index');
     }
 
+
+    
     /**
      * Remove the specified resource from storage.
      */
@@ -87,4 +121,5 @@ class ProduitController extends Controller
         $produit->delete();
         return redirect()->route('produits.index');
     }
+
 }

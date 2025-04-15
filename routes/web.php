@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\LoginController;
+
 
 /*Route::get('/register', [RegisteredUserController::class, 'create'])
     ->middleware('guest')
@@ -23,5 +25,11 @@ Route::middleware(['auth'])->get('/dashboard', function () {
 })->name('dashboard');
 require __DIR__.'/auth.php';*/
 Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('/layout', function () {
     return view('layouts.app');
 });
+Route::resource('cart', CartController::class)->except(['destroy']);
+Route::delete('/cart', [CartController::class, 'destroy'])->name('cart.destroy');
+Route::delete('/cart/{id}', [CartController::class, 'remove'])->name('cart.remove');
