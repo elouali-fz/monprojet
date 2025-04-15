@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\FamilleController;
+use App\Http\Controllers\SousFamilleController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProduitController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EtatController;
 use App\Http\Controllers\ModeReglementController;
@@ -33,6 +36,8 @@ Route::get('/layout', function () {
 });
 Route::resource('cart', CartController::class)->except(['destroy']);
 Route::delete('/cart', [CartController::class, 'destroy'])->name('cart.destroy');
-
+Route::delete('/cart/{id}', [CartController::class, 'remove'])->name('cart.remove');
+Route::resource('/familles',FamilleController::class);
+Route::resource('/sous-familles',SousFamilleController::class);
 Route::resource('etats', EtatController::class);
 Route::resource('mode_reglements', ModeReglementController::class);

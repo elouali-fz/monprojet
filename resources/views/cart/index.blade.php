@@ -117,8 +117,14 @@ use Darryldecode\Cart\Facades\CartFacade as Cart;
                                             </a>
                                             <a class="prd-name" href="#">{{ $cartItem->name }}</a>
                                             <div class="action">
-                                                <a href="#" class="edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                                <a href="#" class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                                <form action="{{ route('cart.remove', $cartItem->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <a href="#" class="remove"></a>
+                                                <button type="submit" class="btn btn-sm btn-outline-danger">
+                                                <i class="fa fa-trash-o" aria-hidden="true"></i> 
+                                                </button>
+                                            </form>
                                             </div>
                                         </td>
                                         <td class="product-price" data-title="Price">
@@ -143,16 +149,18 @@ use Darryldecode\Cart\Facades\CartFacade as Cart;
                                     </tr>
                                     @endforeach
                                     <tr class="cart_item wrap-buttons">
-                                        <td class="wrap-btn-control" colspan="4">
+                                        <td class="wrap-btn-control " colspan="4">
                                             <a class="btn back-to-shop">Back to Shop</a>
-                                            <button class="btn btn-update" type="submit" disabled>update</button>
-                                            <form action="{{ route('cart.destroy') }}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">
-                                                    <i class="fas fa-trash-alt"></i> Clear Cart
-                                                </button>
-                                            </form>
+                                            <div class="" style="display:flex; flex-direction:row;justify-content:flex-end">
+                                                <!-- <button class="btn btn-update" type="submit" disabled>update</button> -->
+                                                <form action="{{ route('cart.destroy') }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-clear">
+                                                        <i class="fas fa-trash-alt"></i> Clear Cart
+                                                    </button>
+                                                </form>
+                                            </div>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -162,38 +170,17 @@ use Darryldecode\Cart\Facades\CartFacade as Cart;
                         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                             <div class="shpcart-subtotal-block">
                                 <div class="subtotal-line">
-                                    <b class="stt-name">Subtotal <span class="sub">(2ittems)</span></b>
-                                    <span class="stt-price"> DH</span>
+                                    <b class="stt-name">Subtotal <span class="sub">{{$cartCount}}</span></b>
+                                    <span class="stt-price">{{ $total }} DH</span>
                                 </div>
                                 <div class="subtotal-line">
                                     <b class="stt-name">Shipping</b>
-                                    <span class="stt-price">£0.00</span>
-                                </div>
-                                <div class="tax-fee">
-                                    <p class="title">Est. Taxes & Fees</p>
-                                    <p class="desc">Based on 56789</p>
+                                    <span class="stt-price">30 DH</span>
                                 </div>
                                 <div class="btn-checkout">
                                     <a href="#" class="btn checkout">Check out</a>
                                 </div>
-                                <div class="biolife-progress-bar">
-                                    <table>
-                                        <tr>
-                                            <td class="first-position">
-                                                <span class="index">$0</span>
-                                            </td>
-                                            <td class="mid-position">
-                                                <div class="progress">
-                                                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </td>
-                                            <td class="last-position">
-                                                <span class="index">$99</span>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <p class="pickup-info"><b>Free Pickup</b> is available as soon as today More about shipping and pickup</p>
+
                             </div>
                         </div>
                     </div>
