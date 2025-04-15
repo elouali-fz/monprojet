@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProduitController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -38,3 +39,4 @@ Route::get('/commandes', function () {
     $commandes = \App\Models\Commande::with(['user', 'etat', 'modeReglement'])->get();
     return view('commandes', compact('commandes'));
 });
+Route::resource('produits', ProduitController::class);
