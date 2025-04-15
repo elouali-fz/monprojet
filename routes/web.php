@@ -29,3 +29,4 @@ Route::get('/', function () {
 });
 Route::resource('cart', CartController::class)->except(['destroy']);
 Route::delete('/cart', [CartController::class, 'destroy'])->name('cart.destroy');
+Route::delete('/cart/{id}', [CartController::class, 'remove'])->name('cart.remove');

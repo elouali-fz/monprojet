@@ -22,11 +22,11 @@ class CartController extends Controller
             'associatedModel' => 'App\Models\Product'
         ];
         \Cart::add($product);
-
+        $cartCount = \Cart::getContent()->count();
         $cartList = \Cart::getContent();
         $subTotal = \Cart::getSubTotal();
         $total= \Cart::getTotal();
-        return view('cart.index',compact('cartList','subTotal','total'));
+        return view('cart.index',compact('cartList','subTotal','total', 'cartCount'));
     }
 
     public function store(){
@@ -71,7 +71,6 @@ class CartController extends Controller
     public function destroy()
     {
         \Cart::clear();
-        // Remove the dd() for production - it's only for debugging
         return redirect()->back()->with('success', 'Cart has been cleared successfully');
     }
 }
