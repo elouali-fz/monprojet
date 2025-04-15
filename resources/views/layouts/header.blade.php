@@ -707,12 +707,6 @@
                                         </div>
                                     </div>
                                 </li> -->
-                                <li class="menu-item ">
-                                    <a href="#" class="menu-name" data-title="Butter & Eggs"><i class="biolife-icon icon-honey"></i>Familles</a>
-                                </li>
-                                <li class="menu-item ">
-                                    <a href="#" class="menu-name" data-title="Butter & Eggs"><i class="biolife-icon icon-honey"></i>SousFamilles</a>
-                                </li>
                             </ul>
                         </div>
                     </div>
