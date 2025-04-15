@@ -707,16 +707,12 @@
                                         </div>
                                     </div>
                                 </li> -->
-                                @foreach(\App\Models\Famille::all() as $famille)
-                                <li class="menu-item menu-item-has-children has-child">
-                                    <a href="#" class="menu-name" data-title="Butter & Eggs"><i class="biolife-icon icon-honey"></i>{{$famille->libelle}}</a>
-                                    <ul class="sub-menu">
-                                    @foreach(\App\Models\SousFamille::where('famille_id',$famille->id)->get() as $sous_famille)
-                                        <li class="menu-item"><a href="#">{{$sous_famille}}</a></li>
-                                    @endforeach
-                                    </ul>
+                                <li class="menu-item ">
+                                    <a href="#" class="menu-name" data-title="Butter & Eggs"><i class="biolife-icon icon-honey"></i>Familles</a>
                                 </li>
-                                @endforeach
+                                <li class="menu-item ">
+                                    <a href="#" class="menu-name" data-title="Butter & Eggs"><i class="biolife-icon icon-honey"></i>SousFamilles</a>
+                                </li>
                             </ul>
                         </div>
                     </div>

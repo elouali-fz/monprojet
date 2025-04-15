@@ -3,10 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Produit;
-use App\Models\Famille;
 
-class Sous_famille extends Model
+class SousFamille extends Model
 {
     protected $guarded = ['id'];
 
