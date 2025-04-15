@@ -34,4 +34,9 @@ Route::get('/layout', function () {
 Route::resource('cart', CartController::class)->except(['destroy']);
 Route::delete('/cart', [CartController::class, 'destroy'])->name('cart.destroy');
 Route::delete('/cart/{id}', [CartController::class, 'remove'])->name('cart.remove');
+
+Route::get('/commandes', function () {
+    $commandes = \App\Models\Commande::with(['user', 'etat', 'modeReglement'])->get();
+    return view('commandes', compact('commandes'));
+});
 Route::resource('produits', ProduitController::class);
