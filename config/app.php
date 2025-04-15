@@ -12,7 +12,7 @@ return [
     | other UI elements where an application name needs to be displayed.
     |
     */
-
+    'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
     'name' => env('APP_NAME', 'Laravel'),
 
     /*
@@ -75,7 +75,6 @@ return [
     | The application locale determines the default locale that will be used
     | by Laravel's translation / localization methods. This option can be
     | set to any locale for which you plan to have translation strings.
-    |
     */
 
     'locale' => env('APP_LOCALE', 'en'),
@@ -90,7 +89,6 @@ return [
     |--------------------------------------------------------------------------
     |
     | This key is utilized by Laravel's encryption services and should be set
-    | to a random, 32 character string to ensure that all encrypted values
     | are secure. You should do this prior to deploying the application.
     |
     */
