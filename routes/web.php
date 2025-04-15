@@ -7,7 +7,8 @@ use App\Http\Controllers\SousFamilleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProduitController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\EtatController;
+use App\Http\Controllers\ModeReglementController;
 
 /*Route::get('/register', [RegisteredUserController::class, 'create'])
     ->middleware('guest')
@@ -38,3 +39,5 @@ Route::delete('/cart', [CartController::class, 'destroy'])->name('cart.destroy')
 Route::delete('/cart/{id}', [CartController::class, 'remove'])->name('cart.remove');
 Route::resource('/familles',FamilleController::class);
 Route::resource('/sous-familles',SousFamilleController::class);
+Route::resource('etats', EtatController::class);
+Route::resource('mode_reglements', ModeReglementController::class);
