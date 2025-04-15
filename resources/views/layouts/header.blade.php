@@ -709,16 +709,16 @@
                                 </li> -->
 
                                 <li class="menu-item ">
-                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Familles</a>
+                                    <a href="{{route('familles.index')}}" class="menu-name"><i class="biolife-icon icon-honey"></i>Familles</a>
                                 </li>
                                 <li class="menu-item ">
-                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>SousFamilles</a>
+                                    <a href="{{route('sous-familles.index')}}" class="menu-name"><i class="biolife-icon icon-honey"></i>SousFamilles</a>
                                 </li>
                                 <li class="menu-item ">
                                     <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Produits</a>
                                 </li>
                                 <li class="menu-item ">
-                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Mode Reglements</a>
+                                    <a href="{{route('mode_reglements.index')}}" class="menu-name"><i class="biolife-icon icon-honey"></i>Mode Reglements</a>
                                 </li>
                                 <li class="menu-item ">
                                     <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Achats</a>
@@ -739,7 +739,7 @@
                                     <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Users</a>
                                 </li>
                                 <li class="menu-item ">
-                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Etats</a>
+                                    <a href="{{route('etats.index')}}" class="menu-name"><i class="biolife-icon icon-honey"></i>Etats</a>
                                 </li>
                                 
                             </ul>
