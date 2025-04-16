@@ -6,8 +6,14 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12 mt-5 mb-5">
-            <div class="table-responsive">
+        <div class="col-md-12 mt-5 mb-5" style="display: flex;flex-direction: column;">
+            <div class="wrap-btn-control">
+                <a class="btn back-to-shop" href="/">Back to Shop</a>
+                <!-- <button class="btn btn-update" type="submit" disabled=""></button> -->
+                <!-- <button class="btn btn-ajouter" type="reset">Ajouter</button> -->
+                <span></span>
+            </div>
+            <div class="table-responsive biotable">
                 <table class="table table-hover biolife-table">
                     <thead>
                         <tr class="bg-success">
@@ -20,6 +26,18 @@
                         </tr>
                     </thead>
                     <tbody>
+                    <tr>
+                        <td><strong>#42</strong></td>
+                        <td>15/04/2023</td>
+                        <td>Jean Dupont</td>
+                        <td><span class="price">125,50 €</span></td>
+                        <td>
+                            <span class="badge bg-success text-white px-3 py-2">
+                                Livré
+                            </span>
+                        </td>
+                        <td>Carte bancaire</td>
+                    </tr>
                         @forelse($commandes as $commande)
                         <tr>
                             <td><strong>#{{ $commande->id }}</strong></td>
@@ -46,6 +64,9 @@
 </div>
 
 <style>
+.biotable{
+    margin-top:2rem;
+}
 .biolife-table {
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
     border-radius: 8px;

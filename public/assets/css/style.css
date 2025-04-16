@@ -5232,6 +5232,53 @@ body.open-overlay #overlay{
     opacity: 1;
     filter: alpha(opacity=100);
 }
+
+/* global buttons */
+
+.wrap-btn-control{
+    padding: 29px 0 0;
+    font-size: 0;
+    line-height: 0;
+    text-align: right;
+    width:100%
+}
+.wrap-btn-control .btn{
+    display: inline-block;
+    background-color: #eeeeee;
+    border: none;
+    border-radius: 9999px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    padding: 16px 10px 15px;
+    min-width: 154px;
+    text-align: center;
+}
+.wrap-btn-control a.back-to-shop{
+    float: left;
+    color: white !important;
+    background-color: rgb(255, 91, 91) !important;
+
+    min-width: 184px;
+}
+.wrap-btn-control .btn-ajouter{
+    margin-left: 20px;
+    color: white !important;
+    background-color: rgb(255, 91, 91) !important;
+}
+.wrap-btn-control .btn:not(:disabled):hover{
+    background-color: #444444 !important;
+    color: #ffffff !important;
+}
+.wrap-btn-control button:disabled{
+    color: #888888 !important;
+    background-color: #e2e2e2 !important;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
 .shpcart-subtotal-block{
     background-color: #fafafa;
     padding: 19px 15px 52px;

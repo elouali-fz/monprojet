@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Commande;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,9 +14,11 @@ class CommandeController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();  
-        $commandes = $user->commandes()->orderBy('created_at','desc')->paginate(10);
-        return view('',compact('commandes'));
+
+        $commandes = Commande::with('detailsCommande.produit')
+            ->latest('created_at')
+            ->paginate(10);
+        return view('commandes.index',compact('commandes'));
     }
 
     /**

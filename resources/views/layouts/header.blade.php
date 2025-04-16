@@ -730,7 +730,7 @@
                                     <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Marques</a>
                                 </li>
                                  <li class="menu-item ">
-                                    <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Commandes</a>
+                                    <a href="{{ route('commandes.index') }}" class="menu-name"><i class="biolife-icon icon-honey"></i>Commandes</a>
                                 </li>
                                  <li class="menu-item ">
                                     <a href="#" class="menu-name"><i class="biolife-icon icon-honey"></i>Fournisseurs</a>

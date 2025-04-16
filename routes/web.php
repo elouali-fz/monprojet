@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CartController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CommandeController;
 use App\Http\Controllers\ProduitController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+
 
 
 /*Route::get('/register', [RegisteredUserController::class, 'create'])
@@ -35,8 +37,5 @@ Route::resource('cart', CartController::class)->except(['destroy']);
 Route::delete('/cart', [CartController::class, 'destroy'])->name('cart.destroy');
 Route::delete('/cart/{id}', [CartController::class, 'remove'])->name('cart.remove');
 
-Route::get('/commandes', function () {
-    $commandes = \App\Models\Commande::with(['user', 'etat', 'modeReglement'])->get();
-    return view('commandes', compact('commandes'));
-});
+Route::resource('commandes', CommandeController::class);
 Route::resource('produits', ProduitController::class);
