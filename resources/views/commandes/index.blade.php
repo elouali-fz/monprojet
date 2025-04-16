@@ -23,6 +23,7 @@
                             <th class="text-white">Montant</th>
                             <th class="text-white">Etat</th>
                             <th class="text-white">Mode de Règlement</th>
+                            <th class="text-white">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -37,6 +38,16 @@
                             </span>
                         </td>
                         <td>Carte bancaire</td>
+                        <td>
+                                <form action="">
+                                    <button class="co-button bg-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill co-icon" viewBox="0 0 16 16">
+                                        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
+                                        <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
+                                    </svg>
+                                    </button>
+                                </form>
+                            </td>
                     </tr>
                         @forelse($commandes as $commande)
                         <tr>
@@ -50,10 +61,20 @@
                                 </span>
                             </td>
                             <td>{{ $commande->modeReglement->libelle ?? 'Non défini' }}</td>
+                            <td>
+                                <form action="">
+                                    <button class="bg-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
+                                        <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
+                                    </svg>
+                                    </button>
+                                </form>
+                            </td>
                         </tr>
                         @empty
                         <tr>
-                            <td colspan="6" class="text-center">Aucune commande trouvée</td>
+                            <td colspan="7" class="text-center">Aucune commande trouvée</td>
                         </tr>
                         @endforelse
                     </tbody>

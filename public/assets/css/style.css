@@ -561,6 +561,32 @@ body{
     transform: rotate(90deg);
     display: block;
 }
+
+/* commande added custom style updated on : 16/04/25 */
+
+.co-button {
+    all: unset; 
+    /* display: inline-block; */
+    border: 1px solid #ccc;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: white;
+    color: black;
+    transition: background-color 0.2s, border-color 0.2s;
+    vertical-align: middle;
+    border: none;
+  }
+
+  .co-icon{
+    display: list-item;
+  }
+
+.bg-primary {
+    background-color: #0d6efd !important;
+    color: #fff !important;
+  }  
+
 @media only screen and (max-width:767.98px){
     .btn-scroll-top{
         line-height:40px;

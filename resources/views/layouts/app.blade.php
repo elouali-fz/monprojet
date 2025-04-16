@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/font-awesome.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/nice-select.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/slick.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap-utilities.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/main-color.css')}}">
 
