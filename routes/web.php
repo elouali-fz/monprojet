@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AchatController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\FamilleController;
@@ -35,6 +36,8 @@ Route::get('/', function () {
 Route::get('/layout', function () {
     return view('layouts.app');
 });
+
+Route::resource('achats', AchatController::class);
 Route::resource('cart', CartController::class)->except(['destroy']);
 Route::delete('/cart', [CartController::class, 'destroy'])->name('cart.destroy');
 Route::delete('/cart/{id}', [CartController::class, 'remove'])->name('cart.remove');
